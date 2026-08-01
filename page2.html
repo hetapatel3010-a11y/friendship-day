@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Beautiful Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(-45deg,#ffd6e7,#ffc2d1,#ffb3c6,#ffe5ec);
+
+background-size:400% 400%;
+
+animation:bg 12s ease infinite;
+
+overflow-x:hidden;
+
+text-align:center;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+/* Floating Hearts */
+
+.heart{
+
+position:fixed;
+
+animation:float linear infinite;
+
+opacity:.8;
+
+pointer-events:none;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(110vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+/* Title */
+
+h1{
+
+margin-top:40px;
+
+font-size:42px;
+
+color:#d6336c;
+
+}
+
+/* Subtitle */
+
+.subtitle{
+
+margin-top:10px;
+
+font-size:18px;
+
+color:#555;
+
+}
+
+/* Gallery */
+
+.gallery{
+
+margin:50px auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+width:90%;
+
+max-width:1100px;
+
+}
+
+/* Photo Card */
+
+.photo{
+
+background:white;
+
+padding:12px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+opacity:0;
+
+transform:translateY(40px);
+
+animation:show 1s forwards;
+
+}
+
+.photo:nth-child(1){
+
+animation-delay:.5s;
+
+}
+
+.photo:nth-child(2){
+
+animation-delay:1.5s;
+
+}
+
+.photo:nth-child(3){
+
+animation-delay:2.5s;
+
+}
+
+.photo:nth-child(4){
+
+animation-delay:3.5s;
+
+}
+
+@keyframes show{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.photo img{
+
+width:100%;
+
+border-radius:15px;
+
+transition:.4s;
+
+}
+
+.photo img:hover{
+
+transform:scale(1.05);
+
+}
+
+.caption{
+
+margin-top:10px;
+
+font-size:17px;
+
+color:#d6336c;
+
+font-weight:500;
+
+}
+
+/* Next Button */
+
+.next{
+
+margin:40px 0 70px;
+
+}
+
+button{
+
+padding:15px 40px;
+
+font-size:18px;
+
+background:#ff4d6d;
+
+color:white;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 10px 25px rgba(255,77,109,.4);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>📸 Our Beautiful Memories ❤️</h1>
+
+<p class="subtitle">
+Every picture tells a story...
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+
+<img src="78fd1776-b34b-4663-b768-053df423edfd.JPG">
+
+<div class="caption">
+❤️ Our First Memory
+</div>
+
+</div>
+
+<div class="photo">
+
+<img src="c47f0fcf-34c9-41f7-8fe9-be26d2e56a9a.JPG">
+
+<div class="caption">
+😊 Endless Smiles
+</div>
+
+</div>
+
+<div class="photo">
+
+<img src="IMG_3033.JPG">
+
+<div class="caption">
+🌸 Together Forever
+</div>
+
+</div>
+
+</div>
+
+<div class="next">
+
+<button onclick="window.location.href='page3.html'">
+
+Next ❤️
+
+</button>
+
+</div>
+
+<script>
+
+const colors=[
+
+"#ff1744",
+
+"#ff4d6d",
+
+"#ff69b4",
+
+"#ff85c2",
+
+"#ff1493",
+
+"#ffb6c1"
+
+];
+
+for(let i=0;i<60;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.color=colors[Math.floor(Math.random()*colors.length)];
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+heart.style.animationDuration=(6+Math.random()*6)+"s";
+
+heart.style.animationDelay=Math.random()*6+"s";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>
